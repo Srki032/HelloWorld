@@ -1,4 +1,7 @@
 pipeline {	
+    agent {
+        label env.AGENT_NAME
+    }
     stages {    	  
         stage('Build') {
             steps {
