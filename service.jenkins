@@ -1,0 +1,29 @@
+pipeline {	
+    stages {    	  
+        stage('Build') {
+            steps {
+                echo "Building.."
+			 }
+            }
+        }
+        stage('Test') {
+            steps {
+            		echo "Testing..."
+            }
+        }
+        stage('Deploy') {        		
+            steps {
+                echo 'Deploying....'
+                }
+            }
+        }
+    }
+    post {    		
+        success {
+                  echo 'The pipeline build completed successfully.'                       
+        }
+        failure {
+            echo 'I failed :('
+        }
+    }
+}
